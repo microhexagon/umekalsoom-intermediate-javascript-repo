@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="message">Hello, World</p>
+<button onclick="changeText()">Click here</button>
+
+<p class="info">The name of my country is Pakistan.it is very beautifull.I love my country very much.</p>
+<p class="info">Allah is one .Hazrat Muhammad peace be upon him is the last prophet of Allah.</p>
+<script>
+    //get element by id
+  function changeText() {
+      let msg = document.getElementById("message");
+      msg.innerText = "You clicked the button!";
+  }
+
+//query selector
+let firstPara = document.querySelector(".info");
+firstPara.style.color = "blue";
+</script>
+
+</body>
+</html>
