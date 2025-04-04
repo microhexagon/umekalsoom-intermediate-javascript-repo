@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="heading">Hello!</h2>
+
+  <button onclick="changeText()">Use textContent</button>
+  <button onclick="changeHTML()">Use innerHTML</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("heading").textContent = "Welcome <i>User</i>";
+    }
+
+    function changeHTML() {
+      document.getElementById("heading").innerHTML = "Welcome <i>User</i>";
+    }
+  </script>
+</body>
+</html>
