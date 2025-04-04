@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="handleClick()">Click here!</button>
+
+  <p id="text" onmouseover="handleMouseOver()" onmouseout="resetText()">
+    Hover over this text.
+  </p>
+
+  <script>
+    function handleClick() {
+      alert("Button was clicked!");
+    }
+
+    function handleMouseOver() {
+      document.getElementById("text").textContent = "You're hovering!";
+    }
+
+    function resetText() {
+      document.getElementById("text").textContent = "Hover over this text.";
+    }
+  </script>
+</body>
+</html>
