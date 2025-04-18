@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call back
+        function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data loaded");
+  }, 1000);
+}
+fetchData((result) => {
+  console.log(result);
+});
+//promises
+getUser(userId)
+  .then(user => getPosts(user.id))
+  .then(posts => getComments(posts[0].id))
+  .then(comments => console.log(comments))
+  .catch(error => console.error(error));
+//await
+async function loadComments() {
+  try {
+    const user = await getUser(userId);
+    const posts = await getPosts(user.id);
+    const comments = await getComments(posts[0].id);
+    console.log(comments);
+  } catch (error) {
+    console.error(error);
+  }
+}
+//fetch api
+// Promise version
+fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+// Async/Await version
+async function getData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching:", error);
+  }
+}
+
+    </script>
+</body>
+</html>
